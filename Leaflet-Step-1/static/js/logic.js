@@ -1,19 +1,19 @@
-var myMap = L.map("map", {
+var myMap = L.map("mapid", {
     center: [15.5994, -28.6731],
     zoom: 3
 });
 
-L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
     tileSize: 512,
     maxZoom: 18,
     zoomOffset: -1,
-    id: "mapid",
+    id: "light-v10",
     accessToken: API_KEY
   }).addTo(myMap);
 
   // Store API query variables
-  var baseURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";// Grab the data with d3
+  var baseURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
  // Grab the data with d3
   d3.json(baseURL, function(data) {
     function styleInfo(feature) {
